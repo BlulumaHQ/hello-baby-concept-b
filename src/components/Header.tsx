@@ -39,11 +39,11 @@ export default function Header() {
     >
       <div className="container-site flex items-center justify-between h-[96px] md:h-[104px]">
         <Link to="/" className="flex items-center gap-4 shrink-0" onClick={() => setMobileOpen(false)}>
-          <span className={`grid place-items-center rounded-full transition-all duration-500 ${transparent ? "bg-white/92 p-2.5" : "bg-background p-2 shadow-sm"}`}>
+          <span className={`grid place-items-center rounded-full transition-all duration-500 ${transparent ? "bg-white/92 px-5 py-4" : "bg-background px-4 py-3 shadow-sm"}`}>
             <img
               src="https://www.careforhealth.life/wp-content/uploads/2021/02/Final-HELLO-BABYLOGO-300x126.png"
               alt="安馨寶貝 Hello Baby"
-              className="h-[62px] md:h-[72px] w-auto"
+              className="h-[52px] md:h-[58px] w-auto"
             />
           </span>
         </Link>
