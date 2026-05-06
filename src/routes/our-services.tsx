@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import serviceHome from "@/assets/service-home-care.webp";
+import serviceHome from "@/assets/service-in-home.webp";
 import serviceNight from "@/assets/service-night-care.webp";
 import serviceDay from "@/assets/service-day-care.webp";
 import serviceMeal from "@/assets/service-meal.webp";
