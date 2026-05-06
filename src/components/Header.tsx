@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 
@@ -14,87 +14,97 @@ const navItems = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const transparent = isHome && !scrolled && !mobileOpen;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-card/98 backdrop-blur-xl border-b border-border shadow-[0_1px_20px_rgba(0,0,0,0.06)]"
-          : "bg-transparent"
+        transparent
+          ? "bg-transparent"
+          : "bg-card/96 backdrop-blur-2xl border-b border-border/80 shadow-[0_16px_50px_rgba(20,40,32,0.08)]"
       }`}
     >
-      <div className="container-site flex items-center justify-between h-[88px]">
-        {/* Logo — larger */}
-        <Link to="/" className="flex items-center gap-3 shrink-0" onClick={() => setMobileOpen(false)}>
-          <img
-            src="https://www.careforhealth.life/wp-content/uploads/2021/02/Final-HELLO-BABYLOGO-300x126.png"
-            alt="安馨寶貝 Hello Baby"
-            className="h-14 w-auto"
-          />
+      <div className="container-site flex items-center justify-between h-[96px] md:h-[104px]">
+        <Link to="/" className="flex items-center gap-4 shrink-0" onClick={() => setMobileOpen(false)}>
+          <span className={`grid place-items-center rounded-full transition-all duration-500 ${transparent ? "bg-white/92 p-2.5" : "bg-background p-2 shadow-sm"}`}>
+            <img
+              src="https://www.careforhealth.life/wp-content/uploads/2021/02/Final-HELLO-BABYLOGO-300x126.png"
+              alt="安馨寶貝 Hello Baby"
+              className="h-[62px] md:h-[72px] w-auto"
+            />
+          </span>
         </Link>
 
-        {/* Desktop nav — refined typography */}
-        <nav className="hidden lg:flex items-center gap-0.5">
+        <nav className="hidden lg:flex items-center gap-1 rounded-full border border-border/70 bg-card/82 px-2 py-2 shadow-sm backdrop-blur-xl">
           {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              activeProps={{ className: "text-brand-jade" }}
-              inactiveProps={{ className: scrolled ? "text-foreground/75 hover:text-brand-jade" : "text-primary-foreground/80 hover:text-primary-foreground" }}
+              activeProps={{ className: "text-primary bg-accent" }}
+              inactiveProps={{ className: "text-foreground/76 hover:text-primary hover:bg-muted/70" }}
               activeOptions={{ exact: true }}
-              className="px-4 py-2 text-[13px] font-medium tracking-[0.02em] transition-colors duration-300"
+              className="rounded-full px-4 py-2.5 text-[13px] font-semibold transition-all duration-300"
             >
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/contact-us"
-            className="ml-5 inline-flex items-center gap-2 px-6 py-2.5 bg-brand-jade text-white text-[13px] font-medium rounded-full hover:bg-brand-teal transition-all duration-300 shadow-sm"
-          >
-            <Phone size={14} />
-            預約諮詢
-          </Link>
         </nav>
 
-        {/* Mobile toggle */}
+        <div className="hidden lg:flex items-center gap-3">
+          <Link
+            to="/contact-us"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-[13px] font-semibold text-primary-foreground shadow-[0_18px_42px_rgba(24,54,44,0.18)] transition-all duration-300 hover:bg-brand-jade hover:text-primary-dark"
+          >
+            <Phone size={15} />
+            預約諮詢
+          </Link>
+        </div>
+
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`lg:hidden p-2.5 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+          className={`lg:hidden rounded-full border p-3 transition-colors ${transparent ? "border-white/40 bg-white/12 text-primary-foreground" : "border-border bg-card text-foreground"}`}
           aria-label="Toggle Navigation"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="lg:hidden bg-card/99 backdrop-blur-xl border-t border-border px-5 py-6 space-y-1">
-          {navItems.map((item) => (
+        <nav className="lg:hidden border-t border-border bg-card/98 px-5 py-6 shadow-xl backdrop-blur-2xl">
+          <div className="grid gap-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                activeProps={{ className: "text-primary bg-accent" }}
+                inactiveProps={{ className: "text-foreground/82" }}
+                activeOptions={{ exact: true }}
+                className="block rounded-2xl px-4 py-4 text-[16px] font-semibold transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
             <Link
-              key={item.to}
-              to={item.to}
-              onClick={() => setMobileOpen(false)}
-              activeProps={{ className: "text-brand-jade bg-accent" }}
-              inactiveProps={{ className: "text-foreground/80" }}
-              activeOptions={{ exact: true }}
-              className="block px-4 py-3.5 text-[15px] font-medium rounded-xl transition-colors"
+              to="/contact-us"
+              className="mt-3 flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-4 text-[16px] font-semibold text-primary-foreground"
             >
-              {item.label}
+              <Phone size={17} />
+              預約諮詢
             </Link>
-          ))}
-          <Link
-            to="/contact-us"
-            onClick={() => setMobileOpen(false)}
-            className="block mt-4 text-center px-4 py-3.5 bg-brand-jade text-white text-[15px] font-medium rounded-full"
-          >
-            預約諮詢
-          </Link>
+          </div>
         </nav>
       )}
     </header>
