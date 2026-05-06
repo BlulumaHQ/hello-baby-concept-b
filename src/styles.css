@@ -59,59 +59,58 @@
 :root {
   --radius: 0.625rem;
 
-  /* Core brand colors from logo */
-  --brand-teal: oklch(0.68 0.10 192);        /* soft teal from logo */
-  --brand-jade: oklch(0.58 0.09 170);        /* deeper jade green */
-  --brand-gold: oklch(0.76 0.12 85);         /* elegant gold from logo */
+  /* Core brand colors from original logo — brighter premium apple-jade */
+  --brand-teal: oklch(0.72 0.12 188);
+  --brand-jade: oklch(0.74 0.18 146);
+  --brand-gold: oklch(0.77 0.13 82);
 
-  /* Primary palette — warm sophisticated taupe */
-  --primary: oklch(0.55 0.04 55);            /* refined taupe */
-  --primary-foreground: oklch(0.99 0.003 80);
-  --primary-dark: oklch(0.35 0.03 50);       /* deep charcoal-brown */
-  --secondary: oklch(0.75 0.025 30);         /* muted rose */
-  --secondary-foreground: oklch(0.28 0.02 50);
-  --secondary-dark: oklch(0.45 0.04 40);
+  /* Premium editorial healthcare palette */
+  --primary: oklch(0.24 0.035 165);
+  --primary-foreground: oklch(0.985 0.004 92);
+  --primary-dark: oklch(0.18 0.032 165);
+  --secondary: oklch(0.86 0.035 76);
+  --secondary-foreground: oklch(0.23 0.03 150);
+  --secondary-dark: oklch(0.44 0.055 150);
 
-  /* Page backgrounds — less beige, more refined */
-  --background: oklch(0.985 0.004 90);       /* near white with warmth */
-  --foreground: oklch(0.22 0.02 50);         /* deep rich text */
-  --card: oklch(1.00 0.00 0);               /* pure white cards */
-  --card-foreground: oklch(0.22 0.02 50);
-  --popover: oklch(1.00 0.00 0);
-  --popover-foreground: oklch(0.22 0.02 50);
-  --muted: oklch(0.965 0.006 85);            /* very subtle warm grey */
-  --muted-foreground: oklch(0.48 0.02 50);
-  --accent: oklch(0.955 0.008 80);           /* soft accent bg */
-  --accent-foreground: oklch(0.22 0.02 50);
+  --background: oklch(0.982 0.006 96);
+  --foreground: oklch(0.205 0.026 155);
+  --card: oklch(0.996 0.002 96);
+  --card-foreground: oklch(0.205 0.026 155);
+  --popover: oklch(0.996 0.002 96);
+  --popover-foreground: oklch(0.205 0.026 155);
+  --muted: oklch(0.946 0.014 92);
+  --muted-foreground: oklch(0.46 0.025 145);
+  --accent: oklch(0.93 0.04 145);
+  --accent-foreground: oklch(0.2 0.035 155);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.925 0.008 80);           /* refined border */
-  --input: oklch(0.935 0.006 80);
-  --ring: oklch(0.68 0.10 192);              /* teal ring */
+  --border: oklch(0.88 0.018 90);
+  --input: oklch(0.91 0.012 90);
+  --ring: oklch(0.74 0.18 146);
 
   /* Surfaces */
-  --surface: oklch(0.975 0.005 85);          /* subtle warm surface */
-  --surface-foreground: oklch(0.25 0.02 50);
-  --hero-overlay: oklch(0.15 0.015 50 / 50%);
+  --surface: oklch(0.935 0.02 88);
+  --surface-foreground: oklch(0.22 0.03 155);
+  --hero-overlay: oklch(0.12 0.02 155 / 38%);
 
   /* Accent gold */
   --warm-gold: oklch(0.76 0.12 85);
 
   /* Charts */
-  --chart-1: oklch(0.68 0.10 192);
-  --chart-2: oklch(0.76 0.12 85);
-  --chart-3: oklch(0.55 0.04 55);
-  --chart-4: oklch(0.58 0.09 170);
-  --chart-5: oklch(0.75 0.025 30);
+  --chart-1: oklch(0.74 0.18 146);
+  --chart-2: oklch(0.72 0.12 188);
+  --chart-3: oklch(0.77 0.13 82);
+  --chart-4: oklch(0.24 0.035 165);
+  --chart-5: oklch(0.86 0.035 76);
 
-  --sidebar: oklch(0.97 0.004 85);
-  --sidebar-foreground: oklch(0.22 0.02 50);
-  --sidebar-primary: oklch(0.68 0.10 192);
-  --sidebar-primary-foreground: oklch(0.99 0.003 80);
-  --sidebar-accent: oklch(0.955 0.008 80);
-  --sidebar-accent-foreground: oklch(0.22 0.02 50);
-  --sidebar-border: oklch(0.925 0.008 80);
-  --sidebar-ring: oklch(0.68 0.10 192);
+  --sidebar: oklch(0.965 0.008 92);
+  --sidebar-foreground: oklch(0.205 0.026 155);
+  --sidebar-primary: oklch(0.74 0.18 146);
+  --sidebar-primary-foreground: oklch(0.985 0.004 92);
+  --sidebar-accent: oklch(0.93 0.04 145);
+  --sidebar-accent-foreground: oklch(0.205 0.026 155);
+  --sidebar-border: oklch(0.88 0.018 90);
+  --sidebar-ring: oklch(0.74 0.18 146);
 }
 
 @layer base {
@@ -129,8 +128,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: 650;
+    letter-spacing: 0;
   }
 }
 
@@ -148,7 +147,7 @@
   }
 
   .container-site {
-    max-width: 1200px;
+    max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.25rem;
@@ -162,21 +161,38 @@
     }
   }
 
-  /* Premium decorative line */
+  /* Premium editorial details */
   .brand-line {
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--brand-teal), var(--brand-gold));
-    border-radius: 1px;
+    width: 68px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-jade), var(--brand-teal), var(--brand-gold));
+    border-radius: 999px;
   }
 
   .brand-line-center {
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--brand-teal), var(--brand-gold));
-    border-radius: 1px;
+    width: 68px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--brand-jade), var(--brand-teal), var(--brand-gold));
+    border-radius: 999px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .editorial-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand-jade);
+  }
+
+  .editorial-hairline {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--brand-jade) 58%, transparent), transparent);
+  }
+
+  .image-lift {
+    box-shadow: 0 28px 70px -46px color-mix(in oklab, var(--primary-dark) 46%, transparent);
   }
 
   /* Subtle fade-in animation */
