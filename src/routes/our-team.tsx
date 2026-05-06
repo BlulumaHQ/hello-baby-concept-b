@@ -112,11 +112,11 @@ function OurTeam() {
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5 md:gap-7">
             {teamMembers.map((member) => (
               <div key={member.name} className="group text-center">
-                <div className="rounded-2xl overflow-hidden bg-muted aspect-[3/4] shadow-sm">
+                <div className="rounded-2xl overflow-hidden bg-muted shadow-sm">
                   <img
                     src={member.photo}
                     alt={`${member.name} - 安馨寶貝月嫂`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-auto block group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
                 </div>
