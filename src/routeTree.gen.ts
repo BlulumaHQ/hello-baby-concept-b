@@ -9,7 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SocialMediaRouteImport } from './routes/social-media'
+import { Route as WellnessJournalRouteImport } from './routes/wellness-journal'
 import { Route as OurTeamRouteImport } from './routes/our-team'
 import { Route as OurServicesRouteImport } from './routes/our-services'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -17,9 +17,9 @@ import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as BrandStoryRouteImport } from './routes/brand-story'
 import { Route as IndexRouteImport } from './routes/index'
 
-const SocialMediaRoute = SocialMediaRouteImport.update({
-  id: '/social-media',
-  path: '/social-media',
+const WellnessJournalRoute = WellnessJournalRouteImport.update({
+  id: '/wellness-journal',
+  path: '/wellness-journal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OurTeamRoute = OurTeamRouteImport.update({
@@ -60,7 +60,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/our-services': typeof OurServicesRoute
   '/our-team': typeof OurTeamRoute
-  '/social-media': typeof SocialMediaRoute
+  '/wellness-journal': typeof WellnessJournalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -69,7 +69,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/our-services': typeof OurServicesRoute
   '/our-team': typeof OurTeamRoute
-  '/social-media': typeof SocialMediaRoute
+  '/wellness-journal': typeof WellnessJournalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -79,7 +79,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/our-services': typeof OurServicesRoute
   '/our-team': typeof OurTeamRoute
-  '/social-media': typeof SocialMediaRoute
+  '/wellness-journal': typeof WellnessJournalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -90,7 +90,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/our-services'
     | '/our-team'
-    | '/social-media'
+    | '/wellness-journal'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -99,7 +99,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/our-services'
     | '/our-team'
-    | '/social-media'
+    | '/wellness-journal'
   id:
     | '__root__'
     | '/'
@@ -108,7 +108,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/our-services'
     | '/our-team'
-    | '/social-media'
+    | '/wellness-journal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -118,16 +118,16 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   OurServicesRoute: typeof OurServicesRoute
   OurTeamRoute: typeof OurTeamRoute
-  SocialMediaRoute: typeof SocialMediaRoute
+  WellnessJournalRoute: typeof WellnessJournalRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/social-media': {
-      id: '/social-media'
-      path: '/social-media'
-      fullPath: '/social-media'
-      preLoaderRoute: typeof SocialMediaRouteImport
+    '/wellness-journal': {
+      id: '/wellness-journal'
+      path: '/wellness-journal'
+      fullPath: '/wellness-journal'
+      preLoaderRoute: typeof WellnessJournalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/our-team': {
@@ -182,8 +182,17 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   OurServicesRoute: OurServicesRoute,
   OurTeamRoute: OurTeamRoute,
-  SocialMediaRoute: SocialMediaRoute,
+  WellnessJournalRoute: WellnessJournalRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
