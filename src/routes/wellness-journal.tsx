@@ -57,10 +57,10 @@ function WellnessJournal() {
   return (
     <>
       <section className="relative pt-[88px] flex items-center justify-center min-h-[300px] bg-surface">
-        <div className="container-site text-center py-16">
-          <div className="brand-line-center mb-5" />
+        <div className="container-site text-center py-16 md:py-20">
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">護理專欄</p>
           <h1 className="text-3xl md:text-5xl font-semibold text-foreground tracking-tight">護理專欄</h1>
-          <p className="mt-4 text-[15px] text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-4 text-[15px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
             專業母嬰護理知識、產後恢復建議與科學坐月子智慧
           </p>
         </div>

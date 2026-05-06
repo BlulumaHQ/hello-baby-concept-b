@@ -26,13 +26,13 @@ function ContactUs() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-[88px] flex items-center justify-center min-h-[280px] bg-surface">
-        <div className="container-site text-center py-16">
+      <section className="relative pt-[88px] flex items-center justify-center min-h-[300px] bg-surface">
+        <div className="container-site text-center py-16 md:py-20">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">聯繫我們</p>
           <h1 className="text-3xl md:text-5xl font-semibold text-foreground tracking-tight">
             開始您的產後護理旅程
           </h1>
-          <p className="mt-4 text-base text-muted-foreground max-w-xl mx-auto">
+          <p className="mt-4 text-[15px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
             填寫以下表單或直接與我們聯繫，讓我們為您安排最適合的護理方案
           </p>
         </div>

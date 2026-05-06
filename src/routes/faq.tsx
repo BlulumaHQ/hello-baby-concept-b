@@ -101,13 +101,13 @@ function FAQ() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-[88px] flex items-center justify-center min-h-[280px] md:min-h-[320px] bg-surface">
+      <section className="relative pt-[88px] flex items-center justify-center min-h-[300px] bg-surface">
         <div className="container-site text-center py-16 md:py-20">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">常見問題</p>
           <h1 className="text-3xl md:text-5xl font-semibold text-foreground tracking-tight">
             解答您的疑問
           </h1>
-          <p className="mt-4 text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          <p className="mt-4 text-[15px] text-muted-foreground max-w-xl mx-auto leading-relaxed">
             我們整理了準媽媽們最常詢問的問題，幫助您更了解安馨寶貝的服務
           </p>
         </div>
