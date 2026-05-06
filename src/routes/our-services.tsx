@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import serviceHome from "@/assets/service-home-care.jpg";
-import serviceNight from "@/assets/service-night-care.jpg";
-import serviceDay from "@/assets/service-day-care.jpg";
-import serviceMeal from "@/assets/service-meal.jpg";
-import serviceCoaching from "@/assets/service-parent-coaching.jpg";
-import serviceOverseas from "@/assets/service-overseas-support.jpg";
+import serviceHome from "@/assets/service-home-care.webp";
+import serviceNight from "@/assets/service-night-care.webp";
+import serviceDay from "@/assets/service-day-care.webp";
+import serviceMeal from "@/assets/service-meal.webp";
+import serviceCoaching from "@/assets/service-parent-coaching.webp";
+import serviceOverseas from "@/assets/service-overseas-support.webp";
 import CareIcon from "@/components/CareIcon";
 import SectionCTA from "@/components/SectionCTA";
 
