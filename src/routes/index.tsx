@@ -53,7 +53,7 @@ function Index() {
           className="absolute inset-0 h-full w-full object-cover object-[80%_center]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,22,18,0.94)_0%,rgba(10,22,18,0.85)_30%,rgba(10,22,18,0.3)_55%,rgba(10,22,18,0.0)_70%)]" />
-        <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-background to-transparent" />
+        
 
         <div className="relative z-10 container-site flex min-h-[100svh] items-center pb-20 pt-36 md:pt-40">
           <div className="grid w-full grid-cols-1 items-end gap-12 lg:grid-cols-12">
