@@ -9,8 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SocialMediaRouteImport } from './routes/social-media'
+import { Route as OurTeamRouteImport } from './routes/our-team'
+import { Route as OurServicesRouteImport } from './routes/our-services'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as BrandStoryRouteImport } from './routes/brand-story'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SocialMediaRoute = SocialMediaRouteImport.update({
+  id: '/social-media',
+  path: '/social-media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurTeamRoute = OurTeamRouteImport.update({
+  id: '/our-team',
+  path: '/our-team',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurServicesRoute = OurServicesRouteImport.update({
+  id: '/our-services',
+  path: '/our-services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandStoryRoute = BrandStoryRouteImport.update({
+  id: '/brand-story',
+  path: '/brand-story',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +55,116 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/brand-story': typeof BrandStoryRoute
+  '/contact-us': typeof ContactUsRoute
+  '/faq': typeof FaqRoute
+  '/our-services': typeof OurServicesRoute
+  '/our-team': typeof OurTeamRoute
+  '/social-media': typeof SocialMediaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/brand-story': typeof BrandStoryRoute
+  '/contact-us': typeof ContactUsRoute
+  '/faq': typeof FaqRoute
+  '/our-services': typeof OurServicesRoute
+  '/our-team': typeof OurTeamRoute
+  '/social-media': typeof SocialMediaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/brand-story': typeof BrandStoryRoute
+  '/contact-us': typeof ContactUsRoute
+  '/faq': typeof FaqRoute
+  '/our-services': typeof OurServicesRoute
+  '/our-team': typeof OurTeamRoute
+  '/social-media': typeof SocialMediaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/brand-story'
+    | '/contact-us'
+    | '/faq'
+    | '/our-services'
+    | '/our-team'
+    | '/social-media'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/brand-story'
+    | '/contact-us'
+    | '/faq'
+    | '/our-services'
+    | '/our-team'
+    | '/social-media'
+  id:
+    | '__root__'
+    | '/'
+    | '/brand-story'
+    | '/contact-us'
+    | '/faq'
+    | '/our-services'
+    | '/our-team'
+    | '/social-media'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrandStoryRoute: typeof BrandStoryRoute
+  ContactUsRoute: typeof ContactUsRoute
+  FaqRoute: typeof FaqRoute
+  OurServicesRoute: typeof OurServicesRoute
+  OurTeamRoute: typeof OurTeamRoute
+  SocialMediaRoute: typeof SocialMediaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/social-media': {
+      id: '/social-media'
+      path: '/social-media'
+      fullPath: '/social-media'
+      preLoaderRoute: typeof SocialMediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-team': {
+      id: '/our-team'
+      path: '/our-team'
+      fullPath: '/our-team'
+      preLoaderRoute: typeof OurTeamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-services': {
+      id: '/our-services'
+      path: '/our-services'
+      fullPath: '/our-services'
+      preLoaderRoute: typeof OurServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/brand-story': {
+      id: '/brand-story'
+      path: '/brand-story'
+      fullPath: '/brand-story'
+      preLoaderRoute: typeof BrandStoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,16 +177,13 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrandStoryRoute: BrandStoryRoute,
+  ContactUsRoute: ContactUsRoute,
+  FaqRoute: FaqRoute,
+  OurServicesRoute: OurServicesRoute,
+  OurTeamRoute: OurTeamRoute,
+  SocialMediaRoute: SocialMediaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
