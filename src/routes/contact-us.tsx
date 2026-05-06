@@ -26,7 +26,7 @@ function ContactUs() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-[72px] flex items-center justify-center min-h-[280px] bg-surface">
+      <section className="relative pt-[88px] flex items-center justify-center min-h-[280px] bg-surface">
         <div className="container-site text-center py-16">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">聯繫我們</p>
           <h1 className="text-3xl md:text-5xl font-semibold text-foreground tracking-tight">
@@ -48,7 +48,7 @@ function ContactUs() {
 
               {submitted ? (
                 <div className="mt-8 bg-muted rounded-2xl p-10 text-center">
-                  <CheckCircle2 size={40} className="text-primary-dark mx-auto" strokeWidth={1.5} />
+                  <CheckCircle2 size={40} className="text-brand-jade mx-auto" strokeWidth={1.5} />
                   <h3 className="mt-4 text-lg font-semibold text-foreground">感謝您的諮詢！</h3>
                   <p className="mt-2 text-sm text-muted-foreground">我們的團隊會在七天內與您聯繫。</p>
                 </div>
@@ -99,7 +99,7 @@ function ContactUs() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-primary-dark text-primary-foreground font-medium rounded-full hover:bg-primary transition-all duration-300 text-sm"
+                    className="w-full flex items-center justify-center gap-2 px-8 py-3.5 bg-brand-jade text-primary-foreground font-medium rounded-full hover:bg-brand-teal transition-all duration-300 text-sm"
                   >
                     提交諮詢
                     <ArrowRight size={16} />
@@ -119,7 +119,7 @@ function ContactUs() {
 
               <div className="bg-muted rounded-2xl p-6">
                 <div className="flex items-start gap-3">
-                  <MapPin size={18} className="text-primary-dark shrink-0 mt-0.5" strokeWidth={1.5} />
+                  <MapPin size={18} className="text-brand-jade shrink-0 mt-0.5" strokeWidth={1.5} />
                   <div>
                     <h3 className="font-semibold text-foreground text-sm">服務區域</h3>
                     <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
@@ -144,7 +144,7 @@ function ContactUs() {
                     "紮肚師到府服務",
                   ].map((s) => (
                     <li key={s} className="flex items-center gap-2">
-                      <CheckCircle2 size={14} className="text-primary-dark shrink-0" strokeWidth={1.5} />
+                      <CheckCircle2 size={14} className="text-brand-jade shrink-0" strokeWidth={1.5} />
                       {s}
                     </li>
                   ))}
@@ -162,7 +162,7 @@ function ContactUs() {
                     "客製化服務方案",
                   ].map((s) => (
                     <li key={s} className="flex items-center gap-2">
-                      <CheckCircle2 size={14} className="text-primary-dark shrink-0" strokeWidth={1.5} />
+                      <CheckCircle2 size={14} className="text-brand-jade shrink-0" strokeWidth={1.5} />
                       {s}
                     </li>
                   ))}

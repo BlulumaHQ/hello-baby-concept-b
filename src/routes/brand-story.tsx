@@ -18,7 +18,7 @@ function BrandStory() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-[72px] min-h-[420px] md:min-h-[500px] flex items-center bg-surface">
+      <section className="relative pt-[88px] min-h-[420px] md:min-h-[500px] flex items-center bg-surface">
         <div className="container-site py-16 md:py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -82,7 +82,7 @@ function BrandStory() {
             <div className="bg-card rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-5">
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted">
-                  <Radio size={20} className="text-primary-dark" strokeWidth={1.5} />
+                  <Radio size={20} className="text-brand-jade" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">96.1 FM 廣播專訪</h3>
@@ -112,7 +112,7 @@ function BrandStory() {
             <div className="bg-card rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-5">
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted">
-                  <Video size={20} className="text-primary-dark" strokeWidth={1.5} />
+                  <Video size={20} className="text-brand-jade" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">SayMyPiece 職人說專訪</h3>
@@ -143,7 +143,7 @@ function BrandStory() {
             <div className="bg-card rounded-2xl p-8 border border-border">
               <div className="flex items-center gap-3 mb-5">
                 <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted">
-                  <Newspaper size={20} className="text-primary-dark" strokeWidth={1.5} />
+                  <Newspaper size={20} className="text-brand-jade" strokeWidth={1.5} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">星島日報報導</h3>
