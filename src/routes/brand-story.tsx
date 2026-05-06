@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Radio, Video, Newspaper, ArrowRight, Play } from "lucide-react";
+import brandStoryImg from "@/assets/brand-story.webp";
 import SectionCTA from "@/components/SectionCTA";
 
 export const Route = createFileRoute("/brand-story")({
@@ -32,7 +33,7 @@ function BrandStory() {
             </div>
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="https://www.careforhealth.life/wp-content/uploads/2025/12/hellobabycare-scaled.png"
+                src={brandStoryImg}
                 alt="安馨寶貝"
                 width={1280}
                 height={720}
