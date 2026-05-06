@@ -96,7 +96,7 @@ function Index() {
               <h2 className="mt-5 text-4xl font-bold leading-tight text-foreground md:text-5xl">不是找人代班，<br />是把最脆弱的時刻交給一個系統。</h2>
             </div>
             <div className="lg:col-span-8">
-              <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
                 {supportPillars.map((item) => (
                   <div key={item.title} className="group bg-card p-8 md:p-10">
                     <CareIcon name={item.icon} className="h-12 w-12 text-brand-jade transition-transform duration-500 group-hover:scale-110" />
@@ -118,7 +118,7 @@ function Index() {
               <h2 className="mt-5 text-4xl font-bold leading-tight md:text-5xl">一天之中，每一個焦慮點都有人接住。</h2>
             </div>
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-2 gap-px border border-primary-foreground/14 bg-primary-foreground/14 md:grid-cols-4">
+              <div className="grid grid-cols-2 gap-px rounded-2xl border border-primary-foreground/14 bg-primary-foreground/14 overflow-hidden md:grid-cols-4">
                 {["夜奶", "哄睡", "備餐", "沐浴", "拍嗝", "觀察", "清潔", "陪伴"].map((item) => (
                   <div key={item} className="bg-primary px-5 py-8 text-center text-lg font-semibold text-primary-foreground/88 md:py-10">
                     {item}
@@ -149,9 +149,9 @@ function Index() {
             {serviceMoments.map((service, index) => (
               <article key={service.title} className={`grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center ${index % 2 ? "" : ""}`}>
                 <div className={`lg:col-span-7 ${index % 2 ? "lg:order-2" : ""}`}>
-                  <div className="relative image-lift">
-                    <div className={`absolute -inset-4 border border-brand-jade/25 ${index % 2 ? "translate-x-5 translate-y-5" : "-translate-x-5 translate-y-5"}`} />
-                    <img src={service.img} alt={service.title} width={1280} height={1536} loading="lazy" className="relative aspect-[5/4] w-full object-cover" />
+                   <div className="relative image-lift">
+                    <div className={`absolute -inset-4 rounded-2xl border border-brand-jade/25 ${index % 2 ? "translate-x-5 translate-y-5" : "-translate-x-5 translate-y-5"}`} />
+                    <img src={service.img} alt={service.title} width={1280} height={1536} loading="lazy" className="relative aspect-[5/4] w-full rounded-2xl object-cover" />
                   </div>
                 </div>
                 <div className={`lg:col-span-5 ${index % 2 ? "lg:order-1" : ""}`}>
@@ -188,7 +188,7 @@ function Index() {
             <div className="lg:col-span-8">
               <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
                 {reviews.map((review) => (
-                  <figure key={review.name} className="border-l-2 border-brand-jade bg-card px-7 py-8">
+                  <figure key={review.name} className="rounded-2xl border-l-2 border-brand-jade bg-card px-7 py-8">
                     <blockquote className="text-[15px] leading-[1.85] text-muted-foreground">“{review.text}”</blockquote>
                     <figcaption className="mt-8 flex items-center justify-between border-t border-border pt-4 text-sm">
                       <span className="font-bold text-foreground">{review.name}</span>
@@ -212,11 +212,11 @@ function Index() {
                 width={1280}
                 height={720}
                 loading="lazy"
-                className="aspect-[16/10] w-full object-cover image-lift"
+                className="aspect-[16/10] w-full rounded-2xl object-cover image-lift"
               />
             </div>
             <div className="lg:col-span-5 lg:-ml-20">
-              <div className="bg-card p-8 shadow-[0_30px_80px_rgba(21,45,35,0.1)] md:p-12">
+              <div className="bg-card rounded-2xl p-8 shadow-[0_30px_80px_rgba(21,45,35,0.1)] md:p-12">
                 <p className="editorial-label">Chinese caregiving team</p>
                 <h2 className="mt-5 text-3xl font-bold leading-tight text-foreground md:text-5xl">文化理解，也是照護能力的一部分。</h2>
                 <p className="mt-6 text-[15px] leading-[1.9] text-muted-foreground">我們理解華人家庭對月子、飲食、作息與家中長輩溝通的期待。這份理解，讓照護更自然，也更安心。</p>
