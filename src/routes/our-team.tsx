@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import caregivingTeam from "@/assets/caregiving-team.webp";
 import { ShieldCheck, Award, GraduationCap, Heart, ArrowRight, Send } from "lucide-react";
 import { useState } from "react";
 import SectionCTA from "@/components/SectionCTA";
