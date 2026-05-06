@@ -50,9 +50,9 @@ function Index() {
           alt="中國月嫂照護新生兒，媽媽安心休息"
           width={1920}
           height={1088}
-          className="absolute inset-0 h-full w-full object-cover object-right-top"
+          className="absolute inset-0 h-full w-full object-cover object-[80%_center]"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,22,18,0.92)_0%,rgba(10,22,18,0.88)_25%,rgba(10,22,18,0.6)_50%,rgba(10,22,18,0.15)_75%,rgba(10,22,18,0.0)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,22,18,0.94)_0%,rgba(10,22,18,0.85)_30%,rgba(10,22,18,0.3)_55%,rgba(10,22,18,0.0)_70%)]" />
         <div className="absolute bottom-0 left-0 right-0 h-36 bg-gradient-to-t from-background to-transparent" />
 
         <div className="relative z-10 container-site flex min-h-[100svh] items-center pb-20 pt-36 md:pt-40">
