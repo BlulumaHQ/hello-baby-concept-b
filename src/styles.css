@@ -193,6 +193,7 @@
 
   .image-lift {
     box-shadow: 0 28px 70px -46px color-mix(in oklab, var(--primary-dark) 46%, transparent);
+    border-radius: var(--radius-2xl);
   }
 
   /* Subtle fade-in animation */
