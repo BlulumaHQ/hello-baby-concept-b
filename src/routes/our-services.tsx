@@ -51,7 +51,7 @@ function OurServices() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-[72px] min-h-[320px] md:min-h-[380px] flex items-center bg-surface">
+      <section className="relative pt-[88px] min-h-[320px] md:min-h-[380px] flex items-center bg-surface">
         <div className="container-site py-16 md:py-20">
           <div className="max-w-2xl">
             <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-4">服務項目</p>
@@ -81,7 +81,7 @@ function OurServices() {
             {services.map((s) => (
               <div key={s.title} className="bg-card rounded-2xl p-7 border border-border hover:shadow-md transition-all duration-300 group">
                 <div className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-muted mb-5 group-hover:bg-accent transition-colors">
-                  <s.icon size={20} className="text-primary-dark" strokeWidth={1.5} />
+                  <s.icon size={20} className="text-brand-jade" strokeWidth={1.5} />
                 </div>
                 <h3 className="font-semibold text-foreground text-sm">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
@@ -154,7 +154,7 @@ function OurServices() {
           </div>
           <Link
             to="/contact-us"
-            className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 bg-primary-dark text-primary-foreground font-medium rounded-full hover:bg-primary transition-all duration-300 text-sm"
+            className="mt-8 inline-flex items-center gap-2 px-8 py-3.5 bg-brand-jade text-primary-foreground font-medium rounded-full hover:bg-brand-teal transition-all duration-300 text-sm"
           >
             確認您的服務區域
             <ArrowRight size={16} />
