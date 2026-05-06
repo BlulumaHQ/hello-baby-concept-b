@@ -50,52 +50,56 @@
   --color-surface: var(--surface);
   --color-surface-foreground: var(--surface-foreground);
   --color-hero-overlay: var(--hero-overlay);
+  --color-warm-gold: var(--warm-gold);
 }
 
 :root {
-  --radius: 0.5rem;
-  /* Brand colors - sage green + teal */
-  --primary: oklch(0.72 0.06 145);
-  --primary-foreground: oklch(1 0 0);
-  --primary-dark: oklch(0.55 0.08 145);
-  --secondary: oklch(0.70 0.10 200);
-  --secondary-foreground: oklch(1 0 0);
-  --secondary-dark: oklch(0.55 0.12 200);
+  --radius: 0.625rem;
 
-  --background: oklch(0.99 0.002 100);
-  --foreground: oklch(0.20 0.02 250);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.20 0.02 250);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.20 0.02 250);
-  --muted: oklch(0.96 0.01 145);
-  --muted-foreground: oklch(0.50 0.02 250);
-  --accent: oklch(0.94 0.02 145);
-  --accent-foreground: oklch(0.20 0.02 250);
+  /* Premium warm maternal palette */
+  --primary: oklch(0.62 0.06 55);          /* warm taupe/mocha */
+  --primary-foreground: oklch(0.99 0.005 80);
+  --primary-dark: oklch(0.48 0.07 50);     /* deep warm brown */
+  --secondary: oklch(0.78 0.04 30);        /* soft blush */
+  --secondary-foreground: oklch(0.30 0.03 50);
+  --secondary-dark: oklch(0.55 0.06 40);
+
+  --background: oklch(0.975 0.008 80);     /* warm cream */
+  --foreground: oklch(0.25 0.03 50);       /* deep warm brown text */
+  --card: oklch(0.99 0.005 80);            /* ivory white */
+  --card-foreground: oklch(0.25 0.03 50);
+  --popover: oklch(0.99 0.005 80);
+  --popover-foreground: oklch(0.25 0.03 50);
+  --muted: oklch(0.955 0.012 75);          /* soft beige */
+  --muted-foreground: oklch(0.50 0.03 50);
+  --accent: oklch(0.945 0.015 70);         /* warm ivory accent */
+  --accent-foreground: oklch(0.25 0.03 50);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.92 0.01 145);
-  --input: oklch(0.92 0.01 145);
-  --ring: oklch(0.72 0.06 145);
+  --border: oklch(0.91 0.015 70);          /* warm cream border */
+  --input: oklch(0.92 0.012 70);
+  --ring: oklch(0.62 0.06 55);
 
-  --surface: oklch(0.97 0.01 145);
-  --surface-foreground: oklch(0.25 0.02 250);
-  --hero-overlay: oklch(0.15 0.03 200 / 60%);
+  --surface: oklch(0.965 0.01 75);         /* warm surface */
+  --surface-foreground: oklch(0.28 0.03 50);
+  --hero-overlay: oklch(0.18 0.02 50 / 55%);
 
-  --chart-1: oklch(0.72 0.06 145);
-  --chart-2: oklch(0.70 0.10 200);
-  --chart-3: oklch(0.60 0.08 170);
-  --chart-4: oklch(0.80 0.05 145);
-  --chart-5: oklch(0.65 0.12 200);
+  --warm-gold: oklch(0.72 0.10 75);        /* warm gold accent */
 
-  --sidebar: oklch(0.98 0.005 145);
-  --sidebar-foreground: oklch(0.20 0.02 250);
-  --sidebar-primary: oklch(0.72 0.06 145);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.94 0.02 145);
-  --sidebar-accent-foreground: oklch(0.20 0.02 250);
-  --sidebar-border: oklch(0.92 0.01 145);
-  --sidebar-ring: oklch(0.72 0.06 145);
+  --chart-1: oklch(0.62 0.06 55);
+  --chart-2: oklch(0.78 0.04 30);
+  --chart-3: oklch(0.55 0.06 40);
+  --chart-4: oklch(0.72 0.10 75);
+  --chart-5: oklch(0.65 0.08 60);
+
+  --sidebar: oklch(0.97 0.008 75);
+  --sidebar-foreground: oklch(0.25 0.03 50);
+  --sidebar-primary: oklch(0.62 0.06 55);
+  --sidebar-primary-foreground: oklch(0.99 0.005 80);
+  --sidebar-accent: oklch(0.945 0.015 70);
+  --sidebar-accent-foreground: oklch(0.25 0.03 50);
+  --sidebar-border: oklch(0.91 0.015 70);
+  --sidebar-ring: oklch(0.62 0.06 55);
 }
 
 @layer base {
@@ -107,22 +111,32 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 600;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer utilities {
   .section-padding {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
   }
 
   .container-site {
-    max-width: 1280px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.25rem;
@@ -133,6 +147,22 @@
     .container-site {
       padding-left: 2rem;
       padding-right: 2rem;
+    }
+  }
+
+  /* Subtle fade-in animation */
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
