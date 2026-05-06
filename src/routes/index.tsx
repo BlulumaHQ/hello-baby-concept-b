@@ -4,7 +4,7 @@ import heroBg from "@/assets/hero-bg.webp";
 import serviceHome from "@/assets/service-home-care.webp";
 import serviceNight from "@/assets/service-overnight.webp";
 import serviceMeal from "@/assets/service-meal.webp";
-import serviceCoaching from "@/assets/service-parent-coaching.webp";
+import serviceCoaching from "@/assets/service-coaching.webp";
 import caregivingTeam from "@/assets/caregiving-team.webp";
 import CareIcon from "@/components/CareIcon";
 import SectionCTA from "@/components/SectionCTA";
