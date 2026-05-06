@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Star, CheckCircle2 } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import serviceHome from "@/assets/service-home-care.jpg";
-import serviceNight from "@/assets/service-night-care.jpg";
-import serviceMeal from "@/assets/service-meal.jpg";
-import serviceCoaching from "@/assets/service-parent-coaching.jpg";
+import heroBg from "@/assets/hero-bg.webp";
+import serviceHome from "@/assets/service-home-care.webp";
+import serviceNight from "@/assets/service-night-care.webp";
+import serviceMeal from "@/assets/service-meal.webp";
+import serviceCoaching from "@/assets/service-parent-coaching.webp";
+import caregivingTeam from "@/assets/caregiving-team.webp";
 import CareIcon from "@/components/CareIcon";
 import SectionCTA from "@/components/SectionCTA";
 
@@ -207,7 +208,7 @@ function Index() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
               <img
-                src="https://www.careforhealth.life/wp-content/uploads/2025/12/hellobabycare-team-scaled.png"
+                src={caregivingTeam}
                 alt="安馨寶貝專業華人月嫂團隊"
                 width={1280}
                 height={720}
