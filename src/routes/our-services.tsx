@@ -100,17 +100,17 @@ function OurServices() {
             {services.map((service, index) => (
               <article key={service.title} className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
                 <div className={`lg:col-span-7 ${index % 2 ? "lg:order-2" : ""}`}>
-                  <div className="relative">
-                    <div className={`absolute top-8 h-full w-full border border-brand-jade/25 ${index % 2 ? "-left-8" : "left-8"}`} />
+                <div className="relative">
+                    <div className={`absolute top-8 h-full w-full rounded-2xl border border-brand-jade/25 ${index % 2 ? "-left-8" : "left-8"}`} />
                     <img
                       src={service.image}
                       alt={service.title}
                       width={1280}
                       height={1536}
                       loading="lazy"
-                      className="relative aspect-[4/3] w-full object-cover image-lift"
+                      className="relative aspect-[4/3] w-full rounded-2xl object-cover image-lift"
                     />
-                    <div className={`absolute bottom-6 ${index % 2 ? "left-6" : "right-6"} hidden bg-primary px-5 py-4 text-primary-foreground shadow-xl md:block`}>
+                    <div className={`absolute bottom-6 ${index % 2 ? "left-6" : "right-6"} hidden rounded-xl bg-primary px-5 py-4 text-primary-foreground shadow-xl md:block`}>
                       <CareIcon name={service.icon} className="h-10 w-10 text-brand-jade" />
                     </div>
                   </div>
@@ -145,14 +145,14 @@ function OurServices() {
               <h2 className="mt-5 text-4xl font-bold leading-tight text-foreground md:text-5xl">承諾不是口號，而是篩選、培訓、管理與回應。</h2>
             </div>
             <div className="lg:col-span-7">
-              <div className="grid grid-cols-1 gap-px overflow-hidden border border-border bg-border md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-2">
                 {[
                   ["高質月嫂", "搜尋 · 招聘 · 管理 · 培訓 · 服務"],
                   ["個別諮詢", "Individual Consultation · Planning · Placement"],
                   ["服務標準", "專業服務 · 護理知識 · 育兒觀念"],
                   ["Personal Touch", "以家庭需求為核心的細膩照護"],
                 ].map(([title, text]) => (
-                  <div key={title} className="bg-card p-8 md:p-10">
+                  <div key={title} className="bg-card p-8 md:p-10 flex flex-col justify-center min-h-[160px]">
                     <h3 className="text-xl font-bold text-foreground">{title}</h3>
                     <p className="mt-4 text-[15px] leading-[1.85] text-muted-foreground">{text}</p>
                   </div>
@@ -175,7 +175,7 @@ function OurServices() {
                 controls
                 preload="none"
                 poster="https://www.careforhealth.life/wp-content/uploads/2022/02/WeChat-Image_20220203220802-1024x1024.jpg"
-                className="aspect-video w-full object-cover image-lift"
+                className="aspect-video w-full rounded-2xl object-cover image-lift"
               >
                 <source src="https://www.careforhealth.life/wp-content/uploads/2022/03/hellobabytraining2.mp4" type="video/mp4" />
               </video>

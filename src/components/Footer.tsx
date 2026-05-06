@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Mail } from "lucide-react";
 
 const navLinks = [
   { to: "/" as const, label: "首頁" },
@@ -28,7 +28,7 @@ export default function Footer() {
             <img
               src="https://www.careforhealth.life/wp-content/uploads/2021/02/Final-HELLO-BABYLOGO-300x126.png"
               alt="安馨寶貝"
-              className="h-14 w-auto brightness-0 invert opacity-90"
+              className="h-14 w-auto"
             />
             <p className="mt-5 text-sm text-primary-foreground/55 leading-[1.8] max-w-sm">
               溫哥華合法註冊的專業母嬰護理機構，致力於為大溫哥華地區及海外來加生子的家庭提供最專業、最溫馨的產後護理服務。
@@ -113,10 +113,6 @@ export default function Footer() {
                   Vancouver · Richmond<br />
                   Burnaby · Coquitlam 及周邊城市
                 </span>
-              </div>
-              <div className="flex items-center gap-2.5 text-sm text-primary-foreground/55">
-                <Phone size={15} className="shrink-0 text-brand-teal/60" />
-                <span>604-XXX-XXXX</span>
               </div>
               <div className="flex items-center gap-2.5 text-sm text-primary-foreground/55">
                 <Mail size={15} className="shrink-0 text-brand-teal/60" />
