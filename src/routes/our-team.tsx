@@ -52,7 +52,7 @@ function OurTeam() {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.08)]">
               <img
-                src="https://www.careforhealth.life/wp-content/uploads/2025/12/hellobabycare-team-scaled.png"
+                src={caregivingTeam}
                 alt="安馨寶貝團隊合照"
                 width={1280}
                 height={720}
